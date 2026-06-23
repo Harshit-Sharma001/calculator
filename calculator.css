@@ -6,19 +6,22 @@ body{
     min-height: 100vh;
     background-color: hsl(0, 0%, 95%);
     font-family: Arial, sans-serif;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 #calculator{
     background-color: hsl(0, 0%, 15%);
     border-radius: 20px;
+    width: 100%;
     max-width: 500px;
     overflow: hidden;
 }
 
 #display{
     width: 100%;
-    padding: 25px;
-    font-size: 5rem;
+    padding: 20px;
+    font-size: clamp(2rem, 8vw, 5rem);
     text-align: left;
     border: none;
     background-color: hsl(0, 0%, 20%);
@@ -30,17 +33,17 @@ body{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    padding: 25px;
+    padding: 20px;
 }
 
 button{
-    width: 90px;
-    height: 90px;
+    width: 100%;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     border: none;
     background-color: hsl(0, 0%, 35%);
     color: white;
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 5vw, 3rem);
     font-weight: bold;
     cursor: pointer;
 }
@@ -63,4 +66,16 @@ button:active{
 
 .operator-btn:active{
     background-color: hsl(39, 100%, 70%);
+}
+
+@media (max-width: 480px){
+
+    #keys{
+        gap: 8px;
+        padding: 15px;
+    }
+
+    #display{
+        padding: 15px;
+    }
 }
